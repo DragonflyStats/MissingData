@@ -1,0 +1,29 @@
+\documentclass{beamer}
+
+\usepackage{subfiles}
+\usepackage{framed}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+
+\begin{document}
+
+\begin{frame}
+\large
+	\frametitle{Missing Data}
+	\begin{itemize}
+		\item Data sets often have missing values.  Missing data is a problem, in particular, with multivariate modeling.  
+		\item If the analyst must discard an entire record because the value for one variable is missing, valuable information is lost. \item Open Question: Is it better to find a way keep the record, adjust for the missing value(s), and let the analysis proceed? \\ (\textit{Remark: Some would say no})
+	\end{itemize}
+	
+\end{frame}
+
+
+%\subfile{00-leadout.tex}
+\subfile{01-MissingData.tex}
+\subfile{01-CRAN.tex}
+
+% \subfile{02-MissingData.tex}
+\subfile{03-MultipleImputation.tex}
+
+\end{document}

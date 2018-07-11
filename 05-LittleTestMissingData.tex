@@ -1,0 +1,30 @@
+\documentclass[MASTER.tex]{subfiles} 
+\begin{document} 
+	%====================================================== %
+\begin{frame}
+		\Large
+Roderick J. A. Little's chi-square statistic for testing whether values are missing completely at random (MCAR) is printed as a footnote to the EM matrices. For this test, the null hypothesis is that the data are missing completely at random, and the p value is significant at the 0.05 level. If the value is less than 0.05, the data are not missing completely at random. The data may be missing at random (MAR) or not missing at random (NMAR). You cannot assume one or the other and need to analyze the data to determine how the data are missing.
+	\end{frame}
+
+	%====================================================== %
+	\begin{frame}
+		\Large
+		
+\noindent \textbf{Regression Method}\\
+
+This method computes multiple linear regression estimates and has options for augmenting the estimates with random components. To each predicted value, the procedure can add a residual from a randomly selected complete case, a random normal deviate, or a random deviate (scaled by the square root of the residual mean square) from the t distribution.
+\end{frame}
+%====================================================== %
+\begin{frame}
+\frametitle{Little's MCAR test}
+		\Large
+The results of Little’s MCAR test appear in footnotes to each EM estimate table. The null
+hypothesis for Little’s MCAR test is that the data are missing completely at random (MCAR).
+Data are MCAR when the pattern of missing values does not depend on the data values. Because
+the significance value is less than 0.05 in our example, we can conclude that the data are not
+missing completely at random. This confirms the conclusion we drew from the descriptive
+statistics and tabulated patterns.
+	\end{frame}
+
+
+\end{document}

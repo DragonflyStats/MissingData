@@ -1,0 +1,39 @@
+---
+title: "MissingData"
+author: "Kevin O'Brien"
+date: "Sunday, November 08, 2015"
+output: html_document
+---
+
+
+```{R}
+data <- airquality
+data[4:10,3] <- rep(NA,7)
+data[1:5,4] <- NA
+data <- data[-c(5,6)]
+summary(data)
+```
+
+```{r}
+pMiss <- function(x){sum(is.na(x))/length(x)*100}
+apply(data,2,pMiss)
+apply(data,1,pMiss)
+```
+
+```{r}
+library(mice)
+md.pattern(data)
+```
+
+
+
+```{r}
+library(VIM)
+aggr_plot <- aggr(data, col=c('navyblue','red'), numbers=TRUE, sortVars=TRUE, labels=names(data), cex.axis=.7, gap=3, ylab=c("Histogram of missing data","Pattern"))
+```
+
+
+```{r}
+tempData <- mice(data,m=5,maxit=50,meth='pmm',seed=500)
+summary(tempData)
+```

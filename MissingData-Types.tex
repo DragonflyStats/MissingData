@@ -1,0 +1,176 @@
+\documentclass[MASTER.tex]{subfiles} 
+\begin{document} 
+	\begin{frame}
+		\frametitle{Types of Missing Data}
+		\Large
+\begin{itemize}
+	\item Missing At Random
+	\item Missing Completely At Random
+	\item Missing Not At Random
+\end{itemize}
+\end{frame}
+%====================================================== %
+\begin{frame}
+\frametitle{Types of Missing Data}
+\Large
+
+\noindent \textbf{Missing Completely At Random}
+\begin{itemize}
+\item  There are several reasons why data may be missing. \item They may be missing because equipment malfunctioned, the weather was terrible, people got sick, or the data were not entered correctly. 
+\item Here the data are \textbf{missing completely at random (MCAR)}.
+\end{itemize}
+\end{frame}
+%====================================================== %
+\begin{frame}
+	\frametitle{Types of Missing Data}
+	\Large
+	
+	\noindent \textbf{Missing Completely At Random}
+	\begin{itemize}
+		\item When we say that data are missing completely at random, we mean that the probability that an observation ($X_i$) is missing is unrelated to the value of $X_i$ or to the value of any other variables.
+\item Thus data on family income would not be considered MCAR if people with low incomes were less likely to report their family income than people with higher incomes.
+\end{itemize}
+\end{frame}
+%====================================================== %
+%\begin{frame}
+%	\frametitle{Types of Missing Data}
+%	\Large
+%	\noindent \textbf{Missing Completely At Random}
+%	\begin{itemize}
+%		
+%\item However if a participant's data were missing because he was stopped for a traffic violation and missed the data collection session, his data would presumably be missing completely at random.
+%\item  Another way to think of MCAR is to note that in that case any piece of data is just as likely to be missing as any other piece of data.
+%\end{itemize}
+%\end{frame}
+%====================================================== %
+
+		
+
+%Suppose the probability of an observation being missing does not depend on observed or unobserved measurements.
+%
+%Then we say that the observation is Missing Completely At Random, which is often abbreviated to MCAR.
+%
+%(Note that in a sample survey setting MCAR is sometimes called uniform non-response.)
+%
+%If data are MCAR, then consistent results with missing data can be obtained by performing the analyses we would have used had their been no missing data, although there will generally be some loss of information. In practice this means that, under MCAR, the analysis of only those units with complete data gives valid inferences.
+%
+%An example of a MCAR mechanism would be that a laboratory sample is dropped, so the resulting observation is missing.
+%
+%However, many mechanisms that initially seem to be MCAR may turn out not to be.
+%
+%For example, a patient in a clinical trial may be lost to follow up after 'falling' under a bus; however if it is a psychiatric trial, this may be an indication of poor response to treatment. Likewise, if a response to a postal questionnaire is missing because the questionnaire was lost or stolen in the post, this may not be
+% random but rather reflect the area in which the sorting office is located.
+
+	%====================================================== %
+	\begin{frame}
+		\frametitle{Types of Missing Data}
+		\Large
+\noindent \textbf{Missing At Random}
+		\begin{itemize}
+\item Often data are not missing completely at random, but they may be classifiable as \textbf{missing at random (MAR)}.\\\textit{ (MAR is not really a good name for this condition because most people would take it to be synonymous with MCAR, which it is not. However, the name has stuck.)}
+\end{itemize}
+\end{frame}
+%====================================================== %
+\begin{frame}
+	\frametitle{Types of Missing Data}
+	\Large
+	\noindent \textbf{Missing At Random}
+	\begin{itemize}
+		
+\item For data to be missing completely at random, the probability that $X_i$ is missing is unrelated to the value of  $X_i$ or other variables in the analysis. 
+\item But the data can be considered as missing at random if the data meet the requirement that missing-ness does not depend on the value of $X_i$ after controlling for another variable.
+\end{itemize}
+\end{frame}
+%=================================================== %
+\begin{frame}
+	\frametitle{Types of Missing Data}
+	\Large
+	\noindent 
+	\begin{itemize}
+		\item MCAR :  Completely at Random throughout the data
+		\item MAR :  Randomly Occuring within variables, but more likely to happen with some variables than other.
+	\end{itemize}
+\end{frame}
+	%====================================================== %
+%	\begin{frame}
+%		\frametitle{Types of Missing Data}
+%		\Large
+%		\noindent \textbf{Missing At Random}
+%		\begin{itemize}
+%
+%\item Missing at random (MAR) occurs when the missing-ness is related to a particular variable, but it is not related to the value of the variable that has missing data.
+%
+%\item For example, suppose people who suffer from depression might be less inclined to report their income, and thus the rate of reported income will be related to depression. \item However they would report answers to other questions to the same extent that everyone else does. For those who do suffer from depression - the probability of not reporting is unrelated to their actual incomes.
+%\end{itemize}
+%\end{frame}
+	%====================================================== %
+%	\begin{frame}
+%		\frametitle{Types of Missing Data}
+%		\Large
+%		\noindent \textbf{Missing At Random}
+%		\begin{itemize}
+%\item As a second example, the MAR assumption would be satisfied if the probability of missing data on income depended on a persons marital status, but within each marital status category, the probability of missing income was unrelated to
+%income.
+
+%Further to the definition of MAR data, consider this: depressed people probably don't have a different income level in general. This is a supposition, and may be wrong. Let us suppose that they do have a different income level. We have a high rate of missing data among depressed individuals, the existing mean income might be significantly than it would be without missing data.
+
+
+%\begin{figure}
+% Requires \usepackage{graphicx}
+% \includegraphics[scale=0.7]{Missing1.png}\\
+%\caption{Missing At Random}\label{Missing1}
+%\end{figure}
+
+%\item However, if, within depressed patients the probability of reported income was unrelated to income level, then the data would be considered MAR, though not MCAR. 
+%\item Another way of saying this is to say that to the extent that missingness is correlated with other variables that are included in the analysis, the data are MAR.
+%		\end{itemize}
+%		
+%	\end{frame}
+%After considering MCAR, a second question naturally arises. That is, what are the most general conditions under which a valid analysis can be done using only the observed data, and no information about the missing value mechanism, Pr(r | yo, ym)?
+%
+%The answer to this is when, given the observed data, the missingness mechanism does not depend on the unobserved data. This is termed Missing At Random, abbreviated MAR.
+%This is equivalent to saying that the behaviour of two units who share observed values have the same statistical behaviour on the other observations, whether observed or not.
+
+
+	%====================================================== %
+	\begin{frame}
+		\frametitle{Types of Missing Data}
+		\Large
+\noindent \textbf{Missing Not at Random}		
+\begin{itemize}
+\item 	If data are not MCAR or MAR then they are classed as Missing Not at Random (MNAR). 
+\item MNAR data is data that is missing for a specific reason (ie. the value of the variable that's missing is related to the reason it's missing)
+\end{itemize}
+\end{frame}
+%	%====================================================== %
+%	\begin{frame}
+%		\frametitle{Types of Missing Data}
+%		\Large
+%		\noindent \textbf{Missing Not at Random}
+%		\begin{itemize}
+%\item For example, if we are studying mental health and people who have been diagnosed as depressed are less likely than others to report their mental status, the data are not missing at random. 
+%\item Clearly the mean mental status score for the available data will not be an unbiased estimate of the mean that we would have obtained with complete data. 
+%\item The same thing happens when people with low income are less likely to report their income on a data collection form.
+%		\end{itemize}
+%		
+%	\end{frame}
+	%====================================================== %
+	\begin{frame}
+		\frametitle{Types of Missing Data}
+		\Large
+		\noindent \textbf{Missing Not at Random}
+		\begin{itemize}
+\item When we have data that are MNAR we have a problem. 
+\item The only way to obtain an unbiased estimate of parameters is to model missingness. 
+\item In other words we would need to write a model that accounts for the missing data. 
+\item That model could then be incorporated into a more complex model for estimating missing values. 
+
+		\end{itemize}
+		
+	\end{frame}
+\end{document}
+%\begin{figure}
+% Requires \usepackage{graphicx}
+% \includegraphics[scale=0.7]{Missing2.png}\\
+%\caption{Summary of Types of Missing Data}\label{Missing2}
+%\end{figure}
