@@ -1,0 +1,57 @@
+---
+title: "``label_missings``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+ Is there a missing value in the row of a dataframe?
+
+####  Description 
+
+Creates a character vector describing presence/absence of missing values
+
+####  Usage 
+<pre><code>
+
+label_missings(data, ..., missing = "Missing",
+complete = "Not Missing")
+
+</code></pre>
+#### Arguments 
+
+* ``data``:  a dataframe or set of vectors of the same length
+* ``...``: extra variable to label
+* ``missing``: character a label for when values are missing - defaults to "Missing"
+* ``complete``: character character a label for when values are complete - defaults to "Not Missing"
+
+#### Value 
+
+character vector of "Missing" and "Not Missing".
+
+#### See Also 
+
+``bind_shadow()`` ``add_any_miss()`` ``add_label_missings()`` ``add_label_shadow()`` ``add_miss_cluster()``
+``add_n_miss()`` ``add_prop_miss()`` ``add_shadow_shift()`` ``cast_shadow()``
+
+#### Examples 
+```{r}
+
+label_missings(airquality)
+library(dplyr)
+airquality %>%
+mutate(is_missing = label_missings(airquality)) %>%
+head()
+
+```
+
+```{r}
+
+airquality %>%
+mutate(is_missing = label_missings(airquality,
+missing = "definitely missing",
+complete = "absolutely complete")) %>%
+head()
+```

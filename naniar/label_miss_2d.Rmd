@@ -1,0 +1,32 @@
+---
+title: "``label_miss_2d``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+
+####  Description 
+
+Label whether a value is missing in either row of two columns.
+
+####  Usage 
+<pre><code>
+label_miss_2d(x1, x2)
+</code></pre>
+
+#### Arguments 
+
+* ``x1 ``:  a variable of a dataframe
+* ``x2``:   another variable of a dataframe
+
+#### Value 
+
+a vector indicating whether any of these rows had missing values
+
+#### Examples 
+```{r}
+label_miss_2d(airquality$Ozone, airquality$Solar.R)
+```

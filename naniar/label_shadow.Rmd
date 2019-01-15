@@ -1,0 +1,30 @@
+---
+title: "``label_shadow``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+ Label shadow values as missing or not missing
+
+####  Description 
+
+Powers ``add_label_shadow``. For the moment it is an internal function.
+
+####  Usage 
+<pre><code>
+label_shadow(data, ..., missing = "Missing", complete = "Not Missing")
+</code></pre>
+
+#### Arguments 
+
+* ``data``: data.frame
+* ``...``: extra variable to label
+* ``missing``: character a label for when values are missing - defaults to "Missing"
+* ``complete``: character character a label for when values are complete - defaults to "Not Missing"
+
+#### Value 
+
+"Missing" or "Not Missing"

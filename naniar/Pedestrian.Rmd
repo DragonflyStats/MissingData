@@ -1,0 +1,56 @@
+---
+title: "``Pedestrian``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+Pedestrian count information around Melbourne for 2016
+
+####  Description 
+
+This dataset contains hourly counts of pedestrians from 4 sensors around Melbourne: Birrarung
+Marr, Bourke Street Mall, Flagstaff station, and Spencer St-Collins St (south), recorded from January
+1st 2016 at 00:00:00 to December 31st 2016 at 23:00:00. 
+
+The data is made free and publicly available from https://data.melbourne.vic.gov.au/Transport-Movement/Pedestrian-volume-updated-monthly-/b2ak-trbp
+
+####  Usage 
+<pre><code>
+
+data(pedestrian)
+</code></pre>
+
+#### Format
+A tibble with 37,700 rows and 9 variables:
+
+* hourly_counts (integer) the number of pedestrians counted at that sensor at that time
+* date_time (POSIXct, POSIXt) The time that the count was taken
+* year (integer) Year of record
+* month (factor) Month of record as an ordered factor (1 = January, 12 = December)
+* month_day (integer) Full day of the month
+* week_day (factor) Full day of the week as an ordered factor (1 = Sunday, 7 = Saturday)
+* hour (integer) The hour of the day in 24 hour format
+* sensor_id (integer) the id of the sensor
+* sensor_name (character) the full name of the sensor
+
+#### Source
+https://data.melbourne.vic.gov.au/Transport-Movement/Pedestrian-volume-updated-monthly-/
+b2ak-trbp
+
+
+#### Examples 
+```{r}
+
+# explore the missingness with vis_miss
+library(naniar)
+vis_miss(pedestrian)
+# Look at the missingness in the variables
+miss_var_summary(pedestrian)
+# There is only missingness in hourly_counts
+# Look at the missingness over a rolling window
+library(ggplot2)
+gg_miss_span(pedestrian, hourly_counts, span_every = 3000)
+
+```

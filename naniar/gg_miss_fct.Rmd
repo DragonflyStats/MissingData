@@ -1,0 +1,42 @@
+---
+title: "``gg_miss_fct ``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+
+Plot the number of missings for each variable, broken down by a factor
+
+####  Description 
+
+This function draws a ggplot plot of the number of missings in each column, broken down by a
+categorical variable from the dataset. A default minimal theme is used, which can be customised as
+normal for ggplot.
+
+####  Usage 
+<pre><code>
+gg_miss_fct(x, fct)
+</code></pre>
+
+#### Arguments 
+
+* ``x``: data.frame
+* ``fct``: column containing the factor variable to visualise
+
+#### Examples 
+```{r}
+gg_miss_fct(x = riskfactors, fct = marital)
+library(ggplot2)
+gg_miss_fct(x = riskfactors, fct = marital) + labs(title = "NA in Risk Factors and Marital status")
+```
+
+#### Value 
+
+ggplot object depicting the each variable.
+
+#### See Also 
+
+``geom_miss_point()``,``gg_miss_case()``,``gg_miss_case_cumsum``,``gg_miss_span()``,``gg_miss_var()``,``gg_miss_var_cumsum()``,``gg_miss_which()``

@@ -1,0 +1,41 @@
+---
+title: "``label_miss_1d``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+Label a missing from one column
+
+####  Description 
+
+Label whether a value is missing in a row of one columns.
+
+####  Usage 
+<pre><code>
+
+label_miss_1d(x1)
+</code></pre>
+
+#### Arguments 
+
+* ``x1 ``:  a variable of a dataframe
+
+
+
+#### Examples 
+```{r}
+label_miss_1d(airquality$Ozone)
+```
+#### Value 
+
+a vector indicating whether any of these rows had missing values
+
+#### Note
+can we generalise label_miss to work for any number of variables?
+
+#### See Also 
+
+add_any_miss() add_label_missings() add_label_shadow()

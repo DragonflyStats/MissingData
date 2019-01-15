@@ -1,0 +1,35 @@
+---
+title: "``miss-complete-case-prop``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+
+Proportion of cases that contain a missing or complete values.
+
+####  Description 
+
+Deprecated, please see ``miss_case_prop()`` and ``complete_case_prop()``.
+
+####  Usage 
+<pre><code>
+
+miss_case_prop(data)
+complete_case_prop(data)
+</code></pre>
+#### Arguments 
+
+* ``data``:  a dataframe
+
+#### Value 
+
+numeric the proportion of cases that contain a missing or complete value
+
+#### See Also 
+
+pct_miss_case() prop_miss_case() pct_miss_var() prop_miss_var() pct_complete_case()
+prop_complete_case() pct_complete_var() prop_complete_var() miss_prop_summary() miss_
+case_summary miss_case_table miss_summary miss_var_prop miss_var_run miss_var_span
