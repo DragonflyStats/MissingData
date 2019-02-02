@@ -1,0 +1,50 @@
+
+replace_with_na Replace values with missings
+
+####  Description 
+
+Specify variables and their values that you want to convert to missing values. This is a complement
+to tidyr::replace_na.
+
+####  Usage 
+<pre><code>
+
+replace_with_na(data, replace = list(), ...)
+</code></pre>
+#### Arguments 
+
+data A data.frame
+replace A named list given the NA to replace values for each column
+... additional arguments for methods. Currently unused
+
+#### Value 
+
+Dataframe with values replaced by NA.
+
+#### See Also 
+
+replace_with_na replace_with_na_all replace_with_na_at replace_with_na_if
+
+#### Examples 
+```{r}
+
+dat_ms <- tibble::tribble(~x, ~y, ~z,
+1, "A", -100,
+3, "N/A", -99,
+NA, NA, -98,
+-99, "E", -101,
+-98, "F", -1)
+replace_with_na(dat_ms,
+replace = list(x = -99))
+74 replace_with_na_all
+replace_with_na(dat_ms,
+replace = list(x = -98))
+replace_with_na(dat_ms,
+replace = list(x = c(-99, -98)))
+replace_with_na(dat_ms,
+replace = list(x = c(-99, -98),
+y = c("N/A")))
+replace_with_na(dat_ms,
+replace = list(x = c(-99, -98),
+y = c("N/A"),
+z = c(-101)))
