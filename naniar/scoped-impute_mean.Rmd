@@ -1,0 +1,48 @@
+scoped-impute_mean Scoped variants of impute_mean
+
+####  Description 
+
+impute_mean imputes the mean for a vector. To get it to work on all variables, use impute_mean_all.
+To only impute variables that satisfy a specific condition, use the scoped variants, impute_below_at,
+and impute_below_if. To use _at effectively, you must know that _at`` affects variables selected with a character 
+####  Usage 
+<pre><code>
+
+impute_mean_all(.tbl)
+impute_mean_at(.tbl, .vars)
+impute_mean_if(.tbl, .predicate)
+scoped-impute_median 81
+</code></pre>
+#### Arguments 
+
+.tbl a data.frame
+.vars variables to impute
+.predicate variables to impute
+
+#### Value 
+
+an dataset with values imputed
+
+#### Examples 
+```{r}
+
+# select variables starting with a particular string.
+library(dplyr)
+impute_mean_all(airquality)
+impute_mean_at(airquality,
+.vars = c("Ozone", "Solar.R"))
+impute_mean_at(airquality,
+.vars = vars(Ozone))
+impute_mean_if(airquality,
+.predicate = is.numeric)
+## Not run:
+library(ggplot2)
+airquality %>%
+bind_shadow() %>%
+impute_mean_all() %>%
+add_label_shadow() %>%
+ggplot(aes(x = Ozone,
+y = Solar.R,
+colour = any_missing)) +
+geom_point()
+## End(Not run)
