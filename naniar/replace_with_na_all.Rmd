@@ -1,0 +1,48 @@
+replace_with_na_all Replace all values with NA where a certain condition is met
+
+####  Description 
+
+This function takes a dataframe and replaces all values that meet the condition specified as an NA
+value, following a special syntax.
+
+####  Usage 
+<pre><code>
+
+replace_with_na_all(data, condition)
+</code></pre>
+#### Arguments 
+
+data A dataframe
+condition A condition required to be TRUE to set NA. Here, the condition is specified
+with a formula, following the syntax: ~.x {condition}. For example, writing
+~.x < 20 would mean "where a variable value is less than 20, replace with NA".
+
+#### Examples 
+```{r}
+
+dat_ms <- tibble::tribble(~x, ~y, ~z,
+1, "A", -100,
+3, "N/A", -99,
+NA, NA, -98,
+-99, "E", -101,
+-98, "F", -1)
+dat_ms
+#replace all instances of -99 with NA
+replace_with_na_all(data = dat_ms,
+condition = ~.x == -99)
+replace_with_na_at 75
+# replace all instances of -98 with NA
+replace_with_na_all(data = dat_ms,
+condition = ~.x == -98)
+# replace all instances of -99 or -98 with NA
+replace_with_na_all(dat_ms,
+condition = ~.x %in% c(-99, -98))
+# replace all instances of -99 or -98, or "N/A" with NA
+replace_with_na_all(dat_ms,
+condition = ~.x %in% c(-99, -98, "N/A"))
+# replace all instances of common na strings
+replace_with_na_all(dat_ms,
+condition = ~.x %in% common_na_strings)
+# where works with functions
+replace_with_na_all(airquality, ~ sqrt(.x) < 5)
+```
