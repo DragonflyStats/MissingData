@@ -1,0 +1,40 @@
+
+shadow_expand_relevel Expand and relevel a shadow column with a new suffix
+
+####  Description 
+
+Internal function to handle appropriate expansion and releveling of shadow variables.
+
+####  Usage 
+<pre><code>
+
+shadow_expand_relevel(.var, suffix)
+84 shadow_long
+</code></pre>
+#### Arguments 
+
+.var a variable in a data.frame
+suffix a character suffix to add to NA_, e.
+
+#### Value 
+
+a factor with expanded levels
+
+#### Examples 
+```{r}
+
+## Not run:
+df <- tibble::tribble(
+~wind, ~temp,
+-99, 45,
+68, NA,
+72, 25
+)
+dfs <- bind_shadow(df)
+test_shade <- dfs$wind_NA
+shadow_expand_relevel(test_shade, "weee")
+dfs %>%
+mutate(temp_NA = shadow_expand_relevel(temp_NA, "weee"))
+# test that this breaks
+shadow_expand_relevel(airquality, "weee")
+## End(Not run)
