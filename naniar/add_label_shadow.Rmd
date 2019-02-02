@@ -1,0 +1,39 @@
+
+add_label_shadow Add a column describing whether there is a shadow
+
+####  Description 
+
+Instead of focussing on labelling whether there are missings, we instead focus on whether there
+have been any shadows created. This can be useful when data has been imputed and you need to
+determine which rows contained missing values when the shadow was bound to the dataset.
+
+####  Usage 
+<pre><code>
+
+add_label_shadow(data, ..., missing = "Missing",
+complete = "Not Missing")
+</code></pre>
+#### Arguments 
+
+* ``data``: data.frame
+... extra variable to label
+missing character a label for when values are missing - defaults to "Missing"
+complete character character a label for when values are complete - defaults to "Not Missing"
+
+#### Value 
+
+data.frame with a column, "any_missing", which describes whether or not there are any rows that
+have a shadow value.
+
+#### See Also 
+
+bind_shadow() add_any_miss() add_label_missings() add_label_shadow() add_miss_cluster()
+add_n_miss() add_prop_miss() add_shadow_shift() cast_shadow()
+
+#### Examples 
+```{r}
+
+airquality %>%
+add_shadow(Ozone, Solar.R) %>%
+add_label_shadow()
+```
