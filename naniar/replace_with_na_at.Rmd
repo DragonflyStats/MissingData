@@ -1,0 +1,45 @@
+
+replace_with_na_at Replace specified variables with NA where a certain condition is met
+
+####  Description 
+
+Replace specified variables with NA where a certain condition is met
+
+####  Usage 
+<pre><code>
+
+replace_with_na_at(data, .vars, condition)
+</code></pre>
+#### Arguments 
+
+data dataframe
+.vars A character string of variables to replace with NA values
+condition A condition required to be TRUE to set NA. Here, the condition is specified
+with a formula, following the syntax: ~.x {condition}. For example, writing
+~.x < 20 would mean "where a variable value is less than 20, replace with NA".
+
+#### Value 
+
+a dataframe
+
+#### Examples 
+```{r}
+
+dat_ms <- tibble::tribble(~x, ~y, ~z,
+1, "A", -100,
+3, "N/A", -99,
+NA, NA, -98,
+76 replace_with_na_if
+-99, "E", -101,
+-98, "F", -1)
+dat_ms
+replace_with_na_at(data = dat_ms,
+.vars = "x",
+condition = ~.x == -99)
+replace_with_na_at(data = dat_ms,
+.vars = c("x","z"),
+condition = ~.x == -99)
+# replace using values in common_na_strings
+replace_with_na_at(data = dat_ms,
+.vars = c("x","z"),
+condition = ~.x %in% common_na_strings)
