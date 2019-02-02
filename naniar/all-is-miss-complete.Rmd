@@ -1,0 +1,31 @@
+## ``all-is-miss-complete``
+all-is-miss-complete Identify if all values are missing or complete
+
+####  Description 
+
+This is shorthand for all(is.na(x)) and all(!is.na(x))
+
+####  Usage 
+<pre><code>
+
+all_na(x)
+all_miss(x)
+all_complete(x)
+</code></pre>
+#### Arguments 
+
+x an R object to be tested.
+
+#### Examples 
+```{r}
+
+misses <- c(NA, NA, NA)
+complete <- c(1, 2, 3)
+mixture <- c(NA, 1, NA)
+all_na(misses)
+all_na(complete)
+all_na(mixture)
+all_complete(misses)
+all_complete(complete)
+all_complete(mixture)
+```
