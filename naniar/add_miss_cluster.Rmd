@@ -1,0 +1,36 @@
+
+add_miss_cluster Add a column that tells us which "missingness cluster" a row belongs
+to
+
+####  Description 
+
+A way to extract the cluster of missingness that a group belongs to. For example, if you use vis_miss(airquality, cluster = TRUE), you can see some clustering in the data, but you
+do not have a way to identify the cluster. Future work will incorporate the seriation package to allow for better control over the clustering from the user.
+
+####  Usage 
+<pre><code>
+
+add_miss_cluster(data, cluster_method = "mcquitty", n_clusters = 2)
+</code></pre>
+#### Arguments 
+
+* ``data``:  a dataframe
+cluster_method character vector of the agglomeration method to use, the default is "mcquitty".
+Options are taken from stats::hclust helpfile, and options include: "ward.D",
+"ward.D2", "single", "complete", "average" (= UPGMA), "mcquitty" (= WPGMA),
+"median" (= WPGMC) or "centroid" (= UPGMC).
+n_clusters numeric the number of clusters you expect. Defaults to 2.
+
+#### See Also 
+
+bind_shadow() add_any_miss() add_label_missings() add_label_shadow() add_miss_cluster()
+add_n_miss() add_prop_miss() add_shadow_shift() cast_shadow()
+
+#### Examples 
+```{r}
+
+add_miss_cluster(airquality)
+add_miss_cluster(airquality, cluster_method = "ward.D")
+add_miss_cluster(airquality, cluster_method = "ward.D", n_clusters = 3)
+add_miss_cluster(airquality, n_clusters = 3)
+```
