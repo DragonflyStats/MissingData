@@ -1,0 +1,34 @@
+add_shadow_shift Add a shadow shifted column to a dataset
+
+####  Description 
+
+Shadow shift missing values using only the selected variables in a dataset, by specifying variable
+names or use dplyr vars and dplyr verbs starts_with, contains, ends_with, etc.
+
+####  Usage 
+<pre><code>
+
+add_shadow_shift(data, ..., suffix = "shift")
+</code></pre>
+#### Arguments 
+
+* ``data``: data.frame
+* ``...``: One or more unquoted variable names separated by commas. These also respect the dplyr verbs starts_with, contains, ends_with, etc.
+suffix suffix to add to variable, defaults to "shift"
+
+#### Value 
+
+data with the added variable shifted named as var_suffix
+12 add_span_counter
+
+#### See Also 
+
+bind_shadow() add_any_miss() add_label_missings() add_label_shadow() add_miss_cluster()
+add_n_miss() add_prop_miss() add_shadow_shift() cast_shadow()
+
+#### Examples 
+```{r}
+
+pedestrian %>% add_shadow_shift(hourly_counts)
+airquality %>% add_shadow_shift(Ozone, Solar.R)
+```
