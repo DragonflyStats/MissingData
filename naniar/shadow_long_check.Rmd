@@ -1,0 +1,32 @@
+
+shadow_long Reshape shadow data into a long format
+
+####  Description 
+
+Once data is in nabular form, where the shadow is bound to the data, it can be useful to reshape it
+into a long format with the columns
+
+####  Usage 
+<pre><code>
+
+shadow_long(shadow_data, ..., only_main_vars = TRUE)
+</code></pre>
+#### Arguments 
+
+shadow_* ``data ``: a data.frame
+... bare name of variables that you want to focus on
+only_main_vars logical - do you want to filter down to main variables?
+shadow_shift 85
+
+#### Value 
+
+data in long format, with columns variable, value, variable_NA, and value_NA.
+
+#### Examples 
+```{r}
+
+aq_shadow <- bind_shadow(airquality)
+shadow_long(aq_shadow)
+# then filter only on Ozone
+shadow_long(aq_shadow, Ozone)
+shadow_long(aq_shadow, Ozone, Solar.R)
