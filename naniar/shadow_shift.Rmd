@@ -1,0 +1,31 @@
+
+
+shadow_shift Shift missing values to facilitate missing data exploration/visualisation
+
+####  Description 
+
+shadow_shift transforms missing values to facilitate visualisation, and has different behaviour for different types of variables. For numeric variables, the values are shifted to 10 variable plus some
+jittered noise, to separate repeated values, so that missing values can be visualised along with the rest of the data.
+
+####  Usage 
+<pre><code>
+
+shadow_shift(x, ...)
+</code></pre>
+#### Arguments 
+
+x a variable of interest to shift
+... extra arguments to pass
+
+#### See Also 
+
+add_shadow_shift() cast_shadow_shift() cast_shadow_shift_label()
+
+#### Examples 
+```{r}
+
+airquality$Ozone
+shadow_shift(airquality$Ozone)
+library(dplyr)
+airquality %>%
+mutate(Ozone_shift = shadow_shift(Ozone))
