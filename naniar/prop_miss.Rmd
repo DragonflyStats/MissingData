@@ -1,0 +1,26 @@
+
+prop_miss Return the proportion of missing values
+
+####  Description 
+
+This is shorthand for mean(is.na(x))
+
+####  Usage 
+<pre><code>
+
+prop_miss(x)
+</code></pre>
+#### Arguments 
+
+* ``x``: vector or data.frame
+
+#### Value 
+
+numeric the proportion of missing values in x
+
+#### Examples 
+```{r}
+
+prop_miss(airquality)
+prop_miss(airquality$Ozone)
+prop_miss_row 71
