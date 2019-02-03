@@ -1,0 +1,31 @@
+
+test_if_missing Test if the input is Missing
+
+####  Description 
+
+Test if the input is Missing
+
+####  Usage 
+<pre><code>
+
+test_if_missing(x)
+</code></pre>
+#### Arguments 
+
+x object
+
+#### Value 
+
+an error if input (x) is not specified
+
+#### Examples 
+```{r}
+
+## Not run:
+# success
+my_test <- x
+test_if_null(my_test)
+#fail
+test_if_missing()
+## End(Not run)
+test_if_null 89
