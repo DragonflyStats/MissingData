@@ -1,0 +1,32 @@
+
+n-var-case-miss The number of variables or cases with missing values
+
+####  Description 
+
+This function calculates the number of variables or cases that contain a missing value
+
+####  Usage 
+<pre><code>
+
+n_var_miss(data)
+n_case_miss(data)
+</code></pre>
+#### Arguments 
+
+* ``data``: data.frame
+
+#### Value 
+
+integer, number of missings
+
+#### See Also 
+
+n_var_complete()
+
+#### Examples 
+```{r}
+
+# how many variables contain missing values?
+n_var_miss(airquality)
+n_case_miss(airquality)
+```
