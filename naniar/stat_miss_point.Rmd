@@ -1,0 +1,34 @@
+
+stat_miss_point stat_miss_point
+
+####  Description 
+
+stat_miss_point adds a geometry for displaying missingness to geom_point
+
+####  Usage 
+<pre><code>
+
+stat_miss_point(mapping = NULL, data = NULL, prop_below = 0.1,
+jitter = 0.05, geom = "point", position = "identity",
+na.rm = FALSE, show.legend = NA, inherit.aes = TRUE, ...)
+</code></pre>
+#### Arguments 
+
+* mapping Set of aesthetic mappings created by ``ggplot2::aes()`` or ``ggplot2::aes_()``. If specified and inherit.aes = TRUE (the default), is combined with the default
+mapping at the top level of the plot. You only need to supply mapping if there isn't a mapping defined for the plot.
+* data A data frame. If specified, overrides the default data frame defined at the top level of the plot.
+* prop_below the degree to shift the values. The default is 0.1
+test_if_dataframe 87
+* jitter the amount of jitter to add. The default is 0.05
+* geom, stat Override the default connection between geom_point and stat_point.
+* position Position adjustment, either as a string, or the result of a call to a position adjustment function
+* na.rm If FALSE (the default), removes missing values with a warning. If TRUE silently removes missing values.
+* ``show.legend``:   logical. Should this layer be included in the legends? NA, the default, includes if
+any aesthetics are mapped. FALSE never includes, and TRUE always includes.
+* inherit.aes If FALSE, overrides the default aesthetics, rather than combining with them.
+This is most useful for helper functions that define both data and aesthetics and
+shouldn't inherit behaviour from the default plot specification, e.g. borders.
+* ... other arguments passed on to ggplot2::layer(). There are three types of arguments you can use here:
+* . Aesthetics: to set an aesthetic to a fixed value, like color = "red" or size = 3.
+* . Other arguments to the layer, for example you override the default stat associated with the layer.
+* . Other arguments passed on to the stat.
