@@ -1,0 +1,31 @@
+
+---
+title: "``naniar::new_shade``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+
+Create a new shade factor
+
+####  Description 
+
+Create a new shade factor
+
+####  Usage 
+<pre><code>
+
+new_shade(x, extra_levels = NULL)
+</code></pre>
+#### Arguments 
+
+x a factor to convert into a shade object
+extra_levels the extra levels to give to shade objects, such as "broken_machine" and so on,
+which get converted into "NA_broken_machine".
+
+#### Value 
+
+a new shade, which is built upon a factor
