@@ -1,0 +1,40 @@
+
+---
+title: "``naniar::as_shadow_upset``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+as_shadow_upset Convert data into shadow format for doing an upset plot
+
+####  Description 
+
+Upset plots are a way of visualising common sets, this function transforms the data into a format that feeds directly into an upset plot
+
+####  Usage 
+<pre><code>
+
+as_shadow_upset(data)
+
+</code></pre>
+#### Arguments 
+
+* ``data ``: a data.frame
+
+#### Value 
+
+a data.frame
+
+#### Examples 
+```{r}
+
+## Not run:
+library(UpSetR)
+airquality %>%
+as_shadow_upset() %>%
+upset()
+## End(Not run)
+```
