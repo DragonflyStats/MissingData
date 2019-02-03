@@ -1,0 +1,32 @@
+
+---
+title: "``naniar::all_row_complete``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+
+
+``all_row_complete`` 
+
+
+####  Description 
+
+Helper function to determine whether all rows are complete
+
+####  Usage 
+<pre><code>
+
+all_row_complete(x)
+</code></pre>
+
+#### Arguments 
+
+* ``x``: a vector
+
+#### Value 
+
+logical vector
