@@ -1,0 +1,40 @@
+---
+title: "``naniar::any-na``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+any-na Identify if there are any missing or complete values
+
+####  Description 
+
+It is useful to search for any instances of missing or complete values. There Are two functions that do this in naniar - any_miss and it's alias any_na. These bother under the hood call anyNA.
+``any_complete`` is the complement to any_miss - it returns TRUE if there are any complete values.
+
+####  Usage 
+<pre><code>
+
+any_na(x)
+any_miss(x)
+any_complete(x)
+</code></pre>
+#### Arguments 
+
+x an R object to be tested
+any_row_miss 15
+
+#### See Also 
+
+all_miss() all_complete
+
+#### Examples 
+```{r}
+
+anyNA(airquality)
+any_na(airquality)
+any_miss(airquality)
+any_complete(airquality)
+```
