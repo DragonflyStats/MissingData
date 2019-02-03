@@ -1,0 +1,28 @@
+
+---
+title: "``naniar::any_row_miss``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+any_row_miss Helper function to determine whether there are any missings
+
+####  Description 
+
+Helper function to determine whether there are any missings
+
+####  Usage 
+<pre><code>
+
+any_row_miss(x)
+</code></pre>
+#### Arguments 
+
+* ``x``: a vector
+
+#### Value 
+
+logical vector TRUE = missing FALSE = complete
