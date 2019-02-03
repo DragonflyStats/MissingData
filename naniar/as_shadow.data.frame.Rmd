@@ -1,0 +1,32 @@
+
+---
+title: "``naniar::as_shadow.data.frame``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+as_shadow.data.frame Create shadow data
+
+####  Description 
+
+Return a tibble in shadow matrix form, where the variables are the same but have a suffix _NA attached to distinguish them.
+
+####  Usage 
+<pre><code>
+
+## S3 method for class 'data.frame'
+as_shadow(data, ...)
+</code></pre>
+#### Arguments 
+
+data dataframe
+... selected variables to use
+
+#### Examples 
+```{r}
+
+as_shadow(airquality)
+```
