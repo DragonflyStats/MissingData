@@ -1,0 +1,33 @@
+
+n-var-case-complete The number of variables with complete values
+
+####  Description 
+
+This function calculates the number of variables that contain a complete value
+
+####  Usage 
+<pre><code>
+
+n_var_complete(data)
+n_case_complete(data)
+</code></pre>
+#### Arguments 
+
+* ``data``: data.frame
+n-var-case-miss 55
+
+#### Value 
+
+integer number of complete values
+
+#### See Also 
+
+n_var_miss()
+
+#### Examples 
+```{r}
+
+# how many variables contain complete values?
+n_var_complete(airquality)
+n_case_complete(airquality)
+```
