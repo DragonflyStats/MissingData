@@ -1,6 +1,5 @@
 ---
 title: "``gg_miss_var_cumsum``"
-
 output: html_document
 ---
 
@@ -8,13 +7,12 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 library(naniar)
 ```
- Plot of cumulative sum of missing value for each variable
+
+Plot of cumulative sum of missing value for each variable
 
 ####  Description 
 
-A plot showing the cumulative sum of missing values for each variable, reading columns from the
-left to the right of the initial dataframe. A default minimal theme is used, which can be customised
-as normal for ggplot.
+A plot showing the cumulative sum of missing values for each variable, reading columns from the left to the right of the initial dataframe. A default minimal theme is used, which can be customised as normal for ggplot.
 
 ####  Usage 
 <pre><code>

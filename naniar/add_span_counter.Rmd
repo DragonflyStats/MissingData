@@ -1,9 +1,18 @@
-add_span_counter Add a counter variable for a span of dataframe
+---
+title: "``naniar::add_span_counter``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+
+Add a counter variable for a span of dataframe
 
 ####  Description 
 
-Adds a variable, span_counter to a dataframe. Used internally to facilitate counting of missing
-values over a given span.
+Adds a variable, span_counter to a dataframe. Used internally to facilitate counting of missing values over a given span.
 
 ####  Usage 
 <pre><code>

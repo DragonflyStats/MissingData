@@ -1,12 +1,20 @@
+---
+title: "``naniar::add_n_miss``"
+output: html_document
+---
 
-add_n_miss Add column containing number of missing data values
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+ Add column containing number of missing data values
 
 ####  Description 
 
 It can be useful when doing data analysis to add the number of missing data points into your
 dataframe. add_n_miss adds a column named "n_miss", which contains the number of missing
 values in that row.
-9
+
 
 ####  Usage 
 <pre><code>
