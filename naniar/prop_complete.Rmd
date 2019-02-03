@@ -1,0 +1,34 @@
+
+---
+title: "``naniar::prop-miss-complete-var``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+prop_complete Return the proportion of complete values
+
+####  Description 
+
+The complement to prop_miss
+
+####  Usage 
+<pre><code>
+
+prop_complete(x)
+</code></pre>
+#### Arguments 
+
+* ``x``: vector or data.frame
+
+#### Value 
+
+numeric proportion of complete values
+
+#### Examples 
+```{r}
+prop_complete(airquality)
+prop_complete(airquality$Ozone)
+```
