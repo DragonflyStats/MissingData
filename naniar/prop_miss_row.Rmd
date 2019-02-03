@@ -1,0 +1,35 @@
+
+---
+title: "``naniar::prop_miss_row ``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+
+Return a vector of the proportion of missing values in each row
+
+####  Description 
+
+Substitute for rowMeans(is.na(data)), but it also checks if input is NULL or is a dataframe
+
+####  Usage 
+<pre><code>
+
+prop_miss_row(data)
+</code></pre>
+#### Arguments 
+
+* ``data``:  a dataframe
+
+#### Value 
+
+numeric vector of the proportion of missing values in each row
+
+
+#### Examples 
+```{r}
+
+prop_miss_row(airquality)
