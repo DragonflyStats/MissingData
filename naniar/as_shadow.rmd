@@ -1,0 +1,31 @@
+
+---
+title: "``naniar::as_shadow``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+as_shadow Create shadows
+
+####  Description 
+
+Representing missing data structure is achieved using the shadow matrix, introduced in Swayne and Buja. The shadow matrix is the same dimension as the data, and consists of binary indicators of
+missingness of data values, where missing is represented as "NA", and not missing is represented as "!NA". Although these may be represented as 1 and 0, respectively.
+
+####  Usage 
+<pre><code>
+
+as_shadow(data, ...)
+
+</code></pre>
+#### Arguments 
+
+data dataframe
+... selected variables to use
+
+#### Value 
+
+appended shadow with column names
