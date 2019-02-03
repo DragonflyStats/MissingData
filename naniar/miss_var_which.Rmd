@@ -1,0 +1,28 @@
+
+miss_var_which Which variables contain missing values?
+
+####  Description 
+
+It can be helpful when writing other functions to just return the names of the variables that contain
+missing values. miss_var_which returns a vector of variable names that contain missings. It will
+return NULL when there are no missings.
+
+####  Usage 
+<pre><code>
+
+miss_var_which(data)
+</code></pre>
+#### Arguments 
+
+* ``data ``: a data.frame
+
+#### Value 
+
+character vector of variable names
+
+#### Examples 
+```{r}
+
+miss_var_which(airquality)
+miss_var_which(iris)
+```
