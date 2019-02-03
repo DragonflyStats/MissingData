@@ -1,0 +1,30 @@
+
+test_if_null Test if the input is NULL
+
+####  Description 
+
+Test if the input is NULL
+
+####  Usage 
+<pre><code>
+
+test_if_null(x)
+</code></pre>
+#### Arguments 
+
+x object
+
+#### Value 
+
+an error if input (x) is NULL
+
+#### Examples 
+```{r}
+
+## Not run:
+# success
+test_if_null(airquality)
+#fail
+my_test <- NULL
+test_if_null(my_test)
+## End(Not run)
