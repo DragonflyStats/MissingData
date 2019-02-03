@@ -1,0 +1,39 @@
+---
+title: "``gg_miss_var_cumsum``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+
+Plot of cumulative sum of missing value for each variable
+
+####  Description 
+
+A plot showing the cumulative sum of missing values for each variable, reading columns from the left to the right of the initial dataframe. A default minimal theme is used, which can be customised as normal for ggplot.
+
+####  Usage 
+<pre><code>
+
+gg_miss_var_cumsum(x)
+</code></pre>
+#### Arguments 
+
+x a data.frame
+
+
+
+#### Examples 
+```{r}
+gg_miss_var_cumsum(airquality)
+```
+#### Value 
+
+a ggplot object showing the cumulative sum of missings over the variables
+
+#### See Also 
+
+geom_miss_point() gg_miss_case() gg_miss_case_cumsum gg_miss_fct() gg_miss_span()
+gg_miss_var() gg_miss_which()

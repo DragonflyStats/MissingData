@@ -1,0 +1,73 @@
+---
+title: "``geom_miss_point``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+
+
+####  Description 
+
+``geom_miss_point`` provides a way to transform and plot missing values in ggplot2. To do so it uses methods from ggobi to display missing data points 10% below the minimum value, so that the values can be seen on the same axis.
+
+####  Usage 
+<pre><code>
+
+geom_miss_point(mapping = NULL, data = NULL, prop_below = 0.1, jitter = 0.05, stat = "miss_point", position = "identity", colour = ..missing.., na.rm = FALSE, show.legend = NA,
+inherit.aes = TRUE, ...)
+</code></pre>
+
+#### Arguments 
+
+* ``mapping``: Set of aesthetic mappings created by ``ggplot2::aes()`` or ``ggplot2::aes_()``. If specified and ``inherit.aes = TRUE`` (the default), is combined with the default mapping at the top level of the plot. You only need to supply mapping if there isn't a mapping defined for the plot.
+* ``data``: A data frame. If specified, overrides the default data frame defined at the top level of the plot.
+* ``prop_below``: the degree to shift the values. The default is 0.1
+* jitter the amount of jitter to add. The default is 0.05
+* ``stat``: The statistical transformation to use on the data for this layer, as a string.
+* ``position``: Position adjustment, either as a string, or the result of a call to a position adjustment function.
+* ``colour``: the colour chosen for the aesthetic
+* ``na.rm``: If FALSE (the default), removes missing values with a warning. If TRUE silently removes missing values.
+* ``show.legend``:   logical. Should this layer be included in the legends? NA, the default, includes if
+any aesthetics are mapped. FALSE never includes, and TRUE always includes.
+* ``inherit.aes``: If FALSE, overrides the default aesthetics, rather than combining with them. This is most useful for helper functions that define both data and aesthetics and shouldn't inherit behaviour from the default plot specification, e.g. borders.
+* ``...``: other arguments passed on to ``ggplot2::layer()``. There are three types of arguments
+you can use here:
+* ``. Aesthetics``: to set an aesthetic to a fixed value, like color = "red" or size = 3.
+. Other arguments to the layer, for example you override the default stat associated with the layer.
+. Other arguments passed on to the stat.
+
+
+#### Examples 
+```{r}
+
+library(ggplot2)
+# using regular geom_point()
+ggplot(airquality,
+aes(x = Ozone,
+y = Solar.R)) +
+geom_point()
+# using geom_miss_point()
+ggplot(airquality,
+aes(x = Ozone,
+y = Solar.R)) +
+geom_miss_point()
+# using facets
+ggplot(airquality,
+aes(x = Ozone,
+y = Solar.R)) +
+geom_miss_point() +
+facet_wrap(~Month)
+```
+
+gg_miss_case 25
+Details
+Plot Missing Data Points
+Note
+Warning message if na.rm = T is supplied.
+
+#### See Also 
+
+``gg_miss_case()``,``gg_miss_case_cumsum()``,``gg_miss_fct()``,``gg_miss_span()``,``gg_miss_var()``,``gg_miss_var_cumsum()``

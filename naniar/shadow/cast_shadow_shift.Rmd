@@ -1,0 +1,44 @@
+---
+title: "``cast_shadow_shift``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+
+Add a shadow and a ``shadow_shift`` column to a dataset
+
+####  Description 
+
+Shift the values and add a shadow column. It also respects the dplyr verbs ``starts_with``, ``contains``,
+``ends_with``, etc.
+
+####  Usage 
+<pre><code>
+cast_shadow_shift(data, ...)
+</code></pre>
+#### Arguments 
+
+* data data.frame
+* ... One or more unquoted variable names separated by commas. These respect the
+dplyr verbs starts_with, contains, ends_with, etc.
+
+
+
+#### Examples 
+```{r}
+
+airquality %>% cast_shadow_shift(Ozone)
+airquality %>% cast_shadow_shift(Ozone,Temp)
+airquality %>% cast_shadow_shift(dplyr::contains("o"))
+```
+#### Value 
+
+data.frame with the shadow and shadow_shift vars
+
+#### See Also 
+
+cast_shadow_shift(), cast_shadow_shift_label() bind_shadow() add_any_miss() add_label_missings()
+add_label_shadow() add_miss_cluster() add_prop_miss() add_shadow_shift()

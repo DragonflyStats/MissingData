@@ -1,0 +1,42 @@
+---
+title: "``impute_mean``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+
+Impute the mean value into a vector with missing values
+
+####  Description 
+
+Impute the mean value into a vector with missing values
+
+####  Usage 
+<pre><code>
+
+impute_mean(x)
+## Default S3 method:
+impute_mean(x)
+## S3 method for class 'factor'
+impute_mean(x)
+</code></pre>
+#### Arguments 
+
+* ``x``: vector
+
+#### Value 
+
+vector with mean values replaced
+
+
+#### Examples 
+```{r}
+
+vec <- rnorm(10)
+vec[sample(1:10, 3)] <- NA
+impute_mean(vec)
+```
+

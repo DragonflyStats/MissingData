@@ -1,0 +1,36 @@
+---
+title: "``pct_miss``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+
+Return the percent of missing values
+
+####  Description 
+
+This is shorthand for mean(is.na(x)) * 100
+
+####  Usage 
+<pre><code>
+pct_miss(x)
+</code></pre>
+
+#### Arguments 
+
+* ``x``: vector or data.frame
+
+#### Examples 
+
+```{r}
+
+pct_miss(airquality)
+pct_miss(airquality$Ozone)
+```
+
+#### Value 
+
+numeric the percent of missing values in x
