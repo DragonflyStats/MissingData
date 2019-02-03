@@ -1,0 +1,38 @@
+miss_var_table Tabulate the missings in the variables
+
+####  Description 
+
+Provide a tidy table of the number of variables with 0, 1, 2, up to n, missing values and the proportion
+of the number of variables those variables make up.
+
+####  Usage 
+<pre><code>
+
+miss_var_table(data)
+</code></pre>
+
+#### Arguments 
+
+* ``data``:  a dataframe
+
+#### Value 
+
+a dataframe
+
+#### See Also 
+
+pct_miss_case() prop_miss_case() pct_miss_var() prop_miss_var() pct_complete_case()
+prop_complete_case() ``pct_complete_var()``,``prop_complete_var()``, miss_prop_summary() miss_
+case_summary ``miss_var_table``, ``n_complete``, ``n_complete_row`` miss_var_run miss_var_span
+miss_var_summary ``miss_var_table``, ``n_complete``, ``n_complete_row`` n_miss n_miss_row pct_
+complete pct_miss ``prop_complete``, ``prop_complete_row``, ``prop_miss``
+
+#### Examples 
+```{r}
+
+miss_var_table(airquality)
+library(dplyr)
+airquality %>%
+group_by(Month) %>%
+miss_var_table()
+```
