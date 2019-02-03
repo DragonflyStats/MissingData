@@ -1,0 +1,27 @@
+
+---
+title: "``naniar::new_shadow``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+####  Description 
+
+Create a new shadow
+
+####  Usage 
+<pre><code>
+
+new_shadow(x)
+</code></pre>
+#### Arguments 
+
+x a data.frame
+
+#### Value 
+
+object with class "shadow", inheriting from it's original class
+
