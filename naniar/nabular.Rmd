@@ -1,0 +1,35 @@
+56 nabular
+nabular Convert data into nabular form by binding shade to it
+
+####  Description 
+
+Binding a shadow matrix to a regular dataframe converts it into nabular data, which makes it easier
+to visualise and work with missing data.
+
+####  Usage 
+<pre><code>
+
+nabular(data, only_miss = FALSE, ...)
+</code></pre>
+#### Arguments 
+
+* ``data``:  a dataframe
+only_miss logical - if FALSE (default) it will bind a dataframe with all of the variables
+duplicated with their shadow. Setting this to TRUE will bind variables only
+those variables that contain missing values. See the examples for more details.
+... extra options to pass to recode_shadow() - a work in progress.
+
+#### Value 
+
+data with the added variable shifted and the suffix _NA
+
+#### See Also 
+
+bind_shadow()
+
+#### Examples 
+```{r}
+
+aq_nab <- nabular(airquality)
+aq_s <- bind_shadow(airquality)
+all.equal(aq_nab, aq_s)
