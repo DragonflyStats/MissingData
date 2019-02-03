@@ -1,0 +1,31 @@
+
+test_if_dataframe Test if input is a data.frame
+
+####  Description 
+
+Test if input is a data.frame
+
+####  Usage 
+<pre><code>
+
+test_if_dataframe(x)
+</code></pre>
+#### Arguments 
+
+x object
+
+#### Value 
+
+an error if input (x) is a data.frame
+88 test_if_missing
+
+#### Examples 
+```{r}
+
+## Not run:
+# success
+test_if_dataframe(airquality)
+#fail
+my_test <- matrix(10)
+test_if_dataframe(my_test)
+## End(Not run)
