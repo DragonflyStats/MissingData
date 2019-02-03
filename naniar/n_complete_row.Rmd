@@ -1,0 +1,35 @@
+
+## ``n_complete_row`` 
+
+Return a vector of the number of complete values in each row
+
+####  Description 
+
+Substitute for rowSums(!is.na(data)) but it also checks if input is NULL or is a dataframe
+
+####  Usage 
+<pre><code>
+
+n_complete_row(data)
+</code></pre>
+#### Arguments 
+
+* ``data``:  a dataframe
+
+#### Value 
+
+numeric vector of the number of complete values in each row
+60 n_miss
+
+#### See Also 
+
+pct_miss_case() prop_miss_case() pct_miss_var() prop_miss_var() pct_complete_case()
+prop_complete_case() ``pct_complete_var()``,``prop_complete_var()``, miss_prop_summary() miss_
+case_summary ``miss_var_table``, ``n_complete``, ``n_complete_row`` miss_var_run miss_var_span
+miss_var_summary ``miss_var_table``, ``n_complete``, ``n_complete_row`` n_miss n_miss_row pct_
+complete pct_miss ``prop_complete``, ``prop_complete_row``, ``prop_miss``
+
+#### Examples 
+```{r}
+n_complete_row(airquality)
+```
