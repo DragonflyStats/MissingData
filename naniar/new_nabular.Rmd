@@ -1,0 +1,25 @@
+---
+title: "``naniar::new_nabular``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+####  Description 
+
+Create a new nabular format
+
+####  Usage 
+<pre><code>
+
+new_nabular(x)
+</code></pre>
+#### Arguments 
+
+x a data.frame
+
+#### Value 
+
+object with class "nabular", inheriting from it's original class
