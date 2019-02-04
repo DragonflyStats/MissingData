@@ -1,0 +1,41 @@
+---
+title: "``naniar::n_miss``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+
+test_if_shadow Test if input is a shadow
+
+####  Description 
+
+Test if input is a shadow
+
+####  Usage 
+<pre><code>
+
+test_if_shadow(x)
+</code></pre>
+#### Arguments 
+
+x object
+90 unbinders
+
+#### Value 
+
+an error if input (x) is a shadow
+
+#### Examples 
+```{r}
+
+## Not run:
+# success
+aq_shadow <- bind_shadow(airquality)
+test_if_shadow(aq_shadow)
+#fail
+test_if_shadow(airquality)
+
+```
