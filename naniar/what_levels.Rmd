@@ -1,0 +1,28 @@
+
+---
+title: "``naniar::what_levels``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+what_levels check the levels of many things
+
+####  Description 
+
+this function is used internally to check what the levels are of the dataframe.
+
+####  Usage 
+<pre><code>
+
+what_levels(x)
+</code></pre>
+#### Arguments 
+
+x data.frame, usually
+
+#### Value 
+
+a list containing the levels of everything
