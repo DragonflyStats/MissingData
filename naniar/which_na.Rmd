@@ -1,0 +1,40 @@
+
+---
+title: "``naniar::which_na``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+## which_are_shade(df_shadow)
+ Which elements contain missings?
+
+####  Description 
+
+Equivalent to ``which(is.na())`` - returns integer locations of missing values.
+
+####  Usage 
+<pre><code>
+
+which_na(x)
+</code></pre>
+#### Arguments 
+
+* ``x``: a dataframe
+
+#### Value 
+
+integer locations of missing values.
+
+
+#### See Also 
+
+where_na()
+
+#### Examples 
+```{r}
+
+which_na(airquality)
+```
