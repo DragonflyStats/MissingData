@@ -1,0 +1,36 @@
+
+---
+title: "``naniar::n_miss``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+
+Return the number of missing values
+
+####  Description 
+
+Substitute for sum(is.na(data))
+
+####  Usage 
+<pre><code>
+
+n_miss(x)
+</code></pre>
+#### Arguments 
+
+* ``x``: a vector
+
+#### Value 
+
+numeric the number of missing values
+
+#### Examples 
+```{r}
+
+n_miss(airquality)
+n_miss(airquality$Ozone)
+```
