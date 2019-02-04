@@ -1,0 +1,59 @@
+
+---
+title: "``naniar::impute_below_at``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+
+``impute_below_at``: Scoped variants of impute_below
+
+####  Description 
+
+impute_below operates on all variables. To only impute variables that satisfy a specific condition, use the scoped variants, ``impute_below_at``, and ``impute_below_if``. To use _at effectively, you
+must know that _at`` affects variables selected with a character vector, or with vars()'.
+
+####  Usage 
+<pre><code>
+
+impute_below_at(.tbl, .vars, prop_below = 0.1, jitter = 0.05, ...)
+</code></pre>
+#### Arguments 
+
+* .tbl a data.frame
+* .vars variables to impute
+* prop_below the degree to shift the values. default is
+* jitter the amount of jitter to add. default is 0.05
+* ... extra arguments
+
+#### Value 
+
+an dataset with values imputed
+
+#### Examples 
+```{r}
+
+# select variables starting with a particular string.
+library(dplyr)
+impute_below_at(airquality,
+.vars = c("Ozone", "Solar.R"))
+impute_below_at(airquality,
+.vars = 1:2)
+#'
+impute_below_at(airquality,
+.vars = vars(Ozone))
+## Not run:
+library(ggplot2)
+airquality %>%
+bind_shadow() %>%
+impute_below_at(vars(Ozone, Solar.R)) %>%
+add_label_shadow() %>%
+ggplot(aes(x = Ozone,
+y = Solar.R,
+colour = any_missing)) +
+geom_point()
+## End(Not run)
+```
