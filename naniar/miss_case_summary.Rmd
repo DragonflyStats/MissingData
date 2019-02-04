@@ -1,0 +1,44 @@
+
+---
+title: "``naniar::miss_case_summary``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+
+miss_case_summary Summarise the missingness in each case
+
+####  Description 
+
+Provide a summary for each case in the data of the number, percent missings, and cumulative sum of missings of the order of the variables. By default, it orders by the most missings in each variable.
+
+####  Usage 
+<pre><code>
+
+miss_case_summary(data, order = TRUE, add_cumsum = FALSE, ...)
+</code></pre>
+#### Arguments 
+
+* ``data ``: a data.frame
+* ``order``:  a logical indicating whether or not to order the result by n_miss. Defaults to TRUE. If FALSE, order of cases is the order input.
+* ``add_cumsum``: logical indicating whether or not to add the cumulative sum of missings to the data. This can be useful when exploring patterns of nonresponse. These are calculated as the cumulative sum of the missings in the variables as they are first presented to the function.
+* ``...``: extra arguments
+
+#### Value 
+
+a tibble of the percent of missing data in each case.
+
+
+#### Examples 
+```{r}
+
+# works with group_by from dplyr
+library(dplyr)
+airquality %>%
+group_by(Month) %>%
+miss_case_summary()
+miss_case_summary(airquality)
+```
