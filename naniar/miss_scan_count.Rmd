@@ -1,0 +1,54 @@
+
+---
+title: "``naniar::n_miss``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+
+miss_scan_count Search and present different kinds of missing values
+
+####  Description 
+
+Searching for different kinds of missing values is really annoying. If you have values like -99 in your data, when they shouldn't be there, or they should be encoded as missing, it can be difficult to
+ascertain if they are there, and if so, where they are. miss_scan_count makes it easier for users to search for particular occurrences of these values across their variables.
+
+####  Usage 
+<pre><code>
+
+miss_scan_count(data, search)
+</code></pre>
+#### Arguments 
+
+* ``data``: data
+* ``search``:  values to search for
+
+#### Value 
+
+a dataframe of the occurrences of the values you searched for
+48 miss_summary
+
+#### See Also 
+
+pct_miss_case() prop_miss_case() pct_miss_var() prop_miss_var() pct_complete_case()
+prop_complete_case() ``pct_complete_var()``,``prop_complete_var()``, miss_prop_summary() miss_
+case_summary ``miss_var_table``, ``n_complete``, ``n_complete_row`` miss_var_run miss_var_span
+miss_var_summary miss_var_table
+
+#### Examples 
+```{r}
+
+dat_ms <- tibble::tribble(~x, ~y, ~z,
+1, "A", -100,
+3, "N/A", -99,
+NA, NA, -98,
+-99, "E", -101,
+-98, "F", -1)
+miss_scan_count(dat_ms,-99)
+miss_scan_count(dat_ms,c(-99,-98))
+miss_scan_count(dat_ms,c("-99","-98","N/A"))
+miss_scan_count(dat_ms,common_na_strings)
+```
