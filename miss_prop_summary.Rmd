@@ -1,0 +1,42 @@
+
+---
+title: "``naniar::n_miss``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+
+miss_prop_summary Proportions of missings in data, variables, and cases.
+
+####  Description 
+
+Return missing data info about the dataframe, the variables, and the cases. Specifically, returning
+how many elements in a dataframe contain a missing value, how many elements in a variable contain
+a missing value, and how many elements in a case contain a missing.
+miss_scan_count 47
+
+####  Usage 
+<pre><code>
+
+miss_prop_summary(data)
+</code></pre>
+#### Arguments 
+
+* ``data``:  a dataframe
+
+#### Value 
+
+a dataframe
+
+
+
+#### Examples 
+```{r}
+
+miss_prop_summary(airquality)
+library(dplyr)
+airquality %>% group_by(Month) %>% miss_prop_summary()
+```
