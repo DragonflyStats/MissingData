@@ -1,0 +1,33 @@
+
+
+---
+title: "``naniar::replace_to_na``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+
+replace_to_na Replace values with missings
+
+####  Description 
+
+This function is deprecated, please see replace_with_na().
+
+####  Usage 
+<pre><code>
+
+replace_to_na(data, to_na = list(), ...)
+
+</code></pre>
+#### Arguments 
+
+* ``data``: A data.frame
+* ``to_na``: A named list given the NA to replace values
+* ``...``: additional arguments for methods.
+
+#### Value 
+
+values replaced by NA
