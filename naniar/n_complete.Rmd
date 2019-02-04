@@ -1,0 +1,35 @@
+---
+title: "``naniar::n_complete``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+
+Return the number of complete values
+
+####  Description 
+
+A complement to ``n_miss``
+
+####  Usage 
+<pre><code>
+
+n_complete(x)
+</code></pre>
+#### Arguments 
+
+* ``x``: a vector
+
+#### Value 
+
+numeric number of complete values
+
+#### Examples 
+```{r}
+
+n_complete(airquality)
+n_complete(airquality$Ozone)
+```
