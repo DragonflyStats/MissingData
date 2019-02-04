@@ -1,0 +1,42 @@
+
+---
+title: "``naniar::n_miss``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+
+``miss_case_table`` Tabulate missings in cases.
+
+####  Description 
+
+Provide a tidy table of the number of cases with 0, 1, 2, up to n, missing values and the proportion
+of the number of cases those cases make up.
+
+####  Usage 
+<pre><code>
+
+miss_case_table(data)
+</code></pre>
+#### Arguments 
+
+* ``data``:  a dataframe
+
+#### Value 
+
+a dataframe
+
+
+
+#### Examples 
+```{r}
+
+miss_case_table(airquality)
+library(dplyr)
+airquality %>%
+group_by(Month) %>%
+miss_case_table()
+```
