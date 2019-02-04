@@ -1,0 +1,32 @@
+
+---
+title: "``naniar::shadow_shift.numeric``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+
+``shadow_shift.numeric`` 
+Shift (impute) numeric values for graphical exploration
+
+####  Description 
+
+Shift (impute) numeric values for graphical exploration
+
+####  Usage 
+<pre><code>
+
+## S3 method for class 'numeric'
+shadow_shift(x, prop_below = 0.1, jitter = 0.05,
+seed_shift = 2017 - 7 - 1 - 1850, ...)
+</code></pre>
+#### Arguments 
+
+* ``x``: a variable of interest to shift
+* ``prop_below``: the degree to shift the values. default is
+* ``jitter``: the amount of jitter to add. default is 0.05
+* ``seed_shift``: a random seed to set, if you like
+* ``...``: extra arguments to pass
