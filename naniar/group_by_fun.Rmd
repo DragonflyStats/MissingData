@@ -1,0 +1,43 @@
+
+---
+title: "``naniar::group_by_fun``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+group_by_fun Group By Helper
+
+####  Description 
+
+This is a wrapper to facilitate the grouped_df S3 method.
+
+####  Usage 
+<pre><code>
+
+group_by_fun(data, .fun, ...)
+</code></pre>
+#### Arguments 
+
+* ``data``: data.frame, which will be grouped
+* .fun a function to apply
+* ... additional arguments to be passed to map
+
+#### Value 
+
+a dataframe with the function applied to each group
+
+#### Examples 
+```{r}
+
+## Not run:
+miss_case_table.grouped_df <- function(data){
+group_by_fun(data,.fun = miss_case_table)
+}
+airquality %>%
+group_by(Month) %>%
+miss_case_table()
+## End(Not run)
+```
