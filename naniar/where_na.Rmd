@@ -1,0 +1,41 @@
+
+---
+title: "``naniar::where_na``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+ Which rows and cols contain missings?
+
+####  Description 
+
+Internal function that is short for which(is.na(x), arr.ind = TRUE). Creates array index locations of missing values in a dataframe.
+
+####  Usage 
+<pre><code>
+
+where_na(x)
+</code></pre>
+
+#### Arguments 
+
+* ``x``: a dataframe
+
+#### Value 
+
+a matrix with columns "row" and "col", which refer to the row and column that identify the position
+of a missing value in a dataframe
+
+#### See Also 
+
+which_na()
+
+#### Examples 
+```{r}
+
+where_na(airquality)
+where_na(oceanbuoys$sea_temp_c)
+```
