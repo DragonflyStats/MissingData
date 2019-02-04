@@ -1,0 +1,34 @@
+
+---
+title: "``naniar::which_are_shade``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+ Which variables are shades?
+
+####  Description 
+
+This function tells us which variables contain shade information
+
+####  Usage 
+<pre><code>
+
+which_are_shade(.tbl)
+</code></pre>
+#### Arguments 
+
+.tbl a data.frame or tbl
+
+#### Value 
+
+numeric - which column numbers contain shade information
+
+#### Examples 
+```{r}
+
+df_shadow <- bind_shadow(airquality)
+```
