@@ -7,6 +7,56 @@
 
 
 
+---
+title: "``naniar::n_miss``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+
+cast_shadow Add a shadow column to a dataset
+
+####  Description 
+
+Casting a shadow shifted column performs the equivalent pattern to data that makes it easy to perform certain visualisations, in line with the principle that the user should have a way to flexibly
+return data formats containing information about the missing data. It forms the base building block for the functions ``cast_shadow_shift``, and ``cast_shadow_shift_label``. It also respects the dplyr
+verbs starts_with, contains, ends_with, etc. to select variables.
+
+####  Usage 
+<pre><code>
+
+cast_shadow(data, ...)
+</code></pre>
+#### Arguments 
+
+* ``data``: data.frame
+* ``...``: One or more unquoted variable names separated by commas. These respect the dplyr verbs starts_with, contains, ends_with, etc.
+
+#### Value 
+
+data with the added variable shifted and the suffix _NA
+
+#### See Also 
+
+cast_shadow_shift(), ``cast_shadow_shift_label()`` bind_shadow() ``add_any_miss()`` ``add_label_missings()``
+add_label_shadow() ``add_miss_cluster()`` add_prop_miss() ``add_shadow_shift()``
+
+#### Examples 
+```{r}
+
+airquality %>% cast_shadow(Ozone)
+airquality %>% cast_shadow(Ozone, Solar.R)
+library(ggplot2)
+library(magrittr)
+airquality %>%
+cast_shadow(Ozone,Solar.R) %>%
+ggplot(aes(x = Ozone,
+colour = Solar.R_NA)) +
+geom_density()
+```
 
 
 ---
