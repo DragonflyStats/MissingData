@@ -1,0 +1,47 @@
+---
+title: "``naniar::n_miss``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+## where 
+
+Split a call into two components with a useful verb name
+
+####  Description 
+
+This function is used inside recode_shadow to help evaluate the formula call effectively. .where is
+a special function designed for use in recode_shadow, and you shouldn't use it outside of it
+
+####  Usage 
+<pre><code>
+
+.where(...)
+</code></pre>
+#### Arguments 
+
+... case_when style formula
+
+#### Value 
+
+a list of "condition" and "suffix" arguments
+where_na 93
+
+#### Examples 
+```{r}
+
+## Not run:
+df <- tibble::tribble(
+~wind, ~temp,
+-99, 45,
+68, NA,
+72, 25
+)
+dfs <- bind_shadow(df)
+recode_shadow(dfs,
+temp = .where(wind == -99 ~ "bananas"))
+## End(Not run)
+```
