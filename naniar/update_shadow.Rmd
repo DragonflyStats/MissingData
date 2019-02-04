@@ -1,0 +1,43 @@
+---
+title: "``naniar::n_miss``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+update_shadow Expand all shadow levels
+
+####  Description 
+
+Internal function to appropriately expand and relevel all shadow variables to include a new suffix
+
+####  Usage 
+<pre><code>
+
+update_shadow(data, suffix)
+</code></pre>
+#### Arguments 
+
+* ``data``: data.frame
+suffix character vector
+
+#### Value 
+
+data.frame with adjusted levels
+
+#### Examples 
+```{r}
+
+df <- tibble::tribble(
+~wind, ~temp,
+-99, 45,
+68, NA,
+72, 25
+)
+dfs <- bind_shadow(df)
+update_shadow(dfs, "weee")
+update_shadow(dfs, "weee") %>% what_levels()
+## End(Not run)
+```
