@@ -1,0 +1,32 @@
+
+
+---
+title: "``naniar::miss-complete-var-prop``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+
+
+Proportion of variables containing missings or complete values
+
+####  Description 
+
+Deprecated. Please see miss_var_prop() and complete_var_prop().
+
+####  Usage 
+<pre><code>
+
+miss_var_prop(data)
+complete_var_prop(data)
+</code></pre>
+#### Arguments 
+
+* ``data``:  a dataframe
+
+#### Value 
+
+numeric the proportion of variables that contain missing or complete data
