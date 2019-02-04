@@ -1,0 +1,41 @@
+
+---
+title: "``naniar::impute_below_if``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+
+impute_below_if Scoped variants of impute_below
+
+####  Description 
+
+impute_below operates on all variables. To only impute variables that satisfy a specific condition, use the scoped variants, ``impute_below_at``, and ``impute_below_if``.
+
+####  Usage 
+<pre><code>
+
+impute_below_if(.tbl, .predicate, prop_below = 0.1, jitter = 0.05, ...)
+36 impute_mean
+</code></pre>
+#### Arguments 
+
+* ``.tbl``: data.frame
+* ``.predicate``: A predicate function (such as is.numeric)
+* ``prop_below``: the degree to shift the values. default is
+* ``jitter``: the amount of jitter to add. default is 0.05
+* ``...``: extra arguments
+
+#### Value 
+
+an dataset with values imputed
+
+#### Examples 
+```{r}
+
+airquality %>%
+impute_below_if(.predicate = is.numeric)
+```
