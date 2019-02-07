@@ -21,7 +21,7 @@ update_shadow(data, suffix)
 #### Arguments 
 
 * ``data``: data.frame
-suffix character vector
+* ``suffix``: character vector
 
 #### Value 
 
