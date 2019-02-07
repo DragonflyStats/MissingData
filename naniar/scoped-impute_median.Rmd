@@ -1,12 +1,20 @@
+---
+title: "``naniar::
+scoped-impute_median ``"
+output: html_document
+---
 
-scoped-impute_median Scoped variants of impute_median
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+Scoped variants of impute_median
 
 ####  Description 
 
 impute_median imputes the median for a vector. To get it to work on all variables, use impute_median_all.
 To only impute variables that satisfy a specific condition, use the scoped variants, impute_below_at,
-and impute_below_if. To use _at effectively, you must know that _at`` affects variables selected with a character
-82 scoped-impute_median
+and ``impute_below_if``. To use ``_at`` effectively, you must know that ``_at`` affects variables selected with a character
 
 ####  Usage 
 <pre><code>
@@ -15,11 +23,12 @@ impute_median_all(.tbl)
 impute_median_at(.tbl, .vars)
 impute_median_if(.tbl, .predicate)
 </code></pre>
+
 #### Arguments 
 
-.tbl a data.frame
-.vars variables to impute
-.predicate variables to impute
+* ``.tbl``: a data.frame
+* ``.vars``: variables to impute
+* ``.predicate``: variables to impute
 
 #### Value 
 
@@ -31,20 +40,21 @@ an dataset with values imputed
 # select variables starting with a particular string.
 library(dplyr)
 impute_median_all(airquality)
-impute_median_at(airquality,
-.vars = c("Ozone", "Solar.R"))
-impute_median_at(airquality,
-.vars = vars(Ozone))
-impute_median_if(airquality,
-.predicate = is.numeric)
-## Not run:
+
+impute_median_at(airquality,.vars = c("Ozone", "Solar.R"))
+impute_median_at(airquality,.vars = vars(Ozone))
+impute_median_if(airquality,.predicate = is.numeric)
+```
+
+
+```{r}
 library(ggplot2)
+
 airquality %>%
-bind_shadow() %>%
-impute_median_all() %>%
-add_label_shadow() %>%
-ggplot(aes(x = Ozone,
-y = Solar.R,
-colour = any_missing)) +
-geom_point()
+  bind_shadow() %>%
+  impute_median_all() %>%
+  add_label_shadow() %>%
+  ggplot(aes(x = Ozone,y = Solar.R,colour = any_missing)) +
+  geom_point()
 ## End(Not run)
+```
