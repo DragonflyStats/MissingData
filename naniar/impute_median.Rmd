@@ -1,0 +1,51 @@
+---
+title: "``naniar::impute_median``"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+```
+Impute the median value into a vector with missing values
+
+####  Description 
+
+Impute the median value into a vector with missing values
+
+####  Usage 
+
+<pre><code>
+impute_median(x)
+## Default S3 method:
+impute_median(x)
+## S3 method for class 'factor'
+impute_median(x)
+</code></pre>
+
+#### Arguments 
+
+* ``x``: vector
+
+#### Value 
+
+vector with median values replaced
+
+#### Examples 
+
+```{r}
+vec <- rnorm(20)
+
+vec
+```
+
+```{r}
+vec[sample(1:20, 3)] <- NA
+vec
+
+median(vec,na.rm = TRUE)
+```
+
+```{r}
+impute_median(vec)
+```
