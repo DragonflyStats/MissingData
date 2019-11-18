@@ -1,4 +1,13 @@
+---
+title: "``naniar::miss_var_summary``"
+output: html_document
+---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(naniar)
+
+```
 miss_var_summary Summarise the missingness in each variable
 
 ####  Description 
@@ -34,9 +43,13 @@ they are given in the data when entering the function
 miss_var_summary(airquality)
 miss_var_summary(oceanbuoys, order = TRUE)
 # works with group_by from dplyr
-miss_var_table 53
+```
+
+
+```{r}
 library(dplyr)
+
 airquality %>%
-group_by(Month) %>%
-miss_var_summary()
+  group_by(Month) %>%
+  miss_var_summary()
 ```
